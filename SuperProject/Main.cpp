@@ -1,34 +1,27 @@
 #include <iostream>
 #include <string>
-#include "Math.h"
+#include <ctime>
 
+using namespace std;
 
 int main()
 {
-	//Task 1
-	for (int a = 0; a < 20; a++)
-	{
 
-		if (a % 2 != 0)
+	//Task 1
+
+	const int s = 4;
+	int array[s][s];
+
+	for(int i = 0; i < s; i++)
+	{
+		for (int j = 0; j < s; j++)
 		{
-			continue;
+			array[i][j] = i + j;
+			cout << array[i][j];
 		}
-		std::cout << a << "\n";
+		cout << '\n';
 	}
 
-	std::cout << " " << "\n";
 
-
-	//Task2
-	int n = 0;
-	int a = 0;
-	
-	std::cout << "Enter the number of characters:";
-	std::cin >> n;
-
-	std::cout << "Enter '1' to display odd numbers, or '0' to display even numbers:";
-	std::cin >> a;
-
-	function(n, a);
 
 }
