@@ -1,46 +1,62 @@
 #include <iostream>
-#include <string>
-#include <time.h>
+#include <cmath>
+
 
 using namespace std;
 
-int GetDay()
+//Task1
+class Test
 {
-	struct tm newTime;
-	time_t now = time(0);
-	localtime_s(&newTime, &now);
-	return newTime.tm_mday;
-}
+private:
+	int a = 12;
+	int b = 14;
+	int c = 0;
+
+public:
+
+	int GetC()
+	{
+		c = a + b;
+		return c;
+	}
+};
+
+//Task2
+class Vector
+{
+private:
+	double x = 0;
+	double y = 0;
+	double z = 0;
+	double m = 0;
+
+public:
+	Vector() : x(3), y(2), z(7)
+	{}
+	void Show()
+	{
+		cout << '\n' << x << ' ' << y << ' ' << z << '\n';
+	}
+
+	void VectorModule()
+	{
+		m = sqrt( pow(x, 2) + pow(y, 2) + pow(z, 2) );
+		cout << m << '\n';
+	}
+};
 
 int main()
 {
+	//Task1
+	Test temp;
+	cout << temp.GetC() << '\n';
 
-	//Task 1
-
-	const int s = 4;
-	int array[s][s];
-
-	for(int i = 0; i < s; i++)
-	{
-		for (int j = 0; j < s; j++)
-		{
-			array[i][j] = i + j;
-			cout << array[i][j] << " ";
-		}
-		cout << '\n';
-	}
+	//Task2
+	Vector v;
+	v.Show();
 	cout << '\n';
+	cout << "Vector module: ";
+	v.VectorModule();
 
-	//Task 2
 
-	int d = GetDay();
-	int a = d % s;
-
-	int sum = 0;
-	for (int i = 0; i < s; i++)
-	{
-		sum += array[a][i];
-	}
-	cout << "Sum of line items: " << sum << endl;
-	
 }
