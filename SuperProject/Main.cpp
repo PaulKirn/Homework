@@ -1,5 +1,6 @@
 #include <iostream>
 #include <new>
+#include <cassert> 
 
 using namespace std;
 
@@ -55,8 +56,7 @@ public:
     // pop an item from the stack
     T pop()
     {
-        if (count == 0)
-            return 0; // stack is empty
+        assert(count >= 0 || count <= 100);
         count--;
         return stack[count];
     }
@@ -64,8 +64,7 @@ public:
     // View the item at the top of the stack
     T Head()
     {
-        if (count == 0)
-            return 0;
+        assert(count >= 0 || count <= 100);
         return stack[count - 1];
     }
 
