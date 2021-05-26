@@ -45,6 +45,8 @@ public:
             // free stack memory, tmp pointer
             if (count > 1)
                 delete[] tmp;
+            
+            
         }
         catch (bad_alloc e)
         {
@@ -56,7 +58,7 @@ public:
     // pop an item from the stack
     T pop()
     {
-        assert(count >= 0 || count <= 100);
+        assert(count >= 0 && count <= 4);
         count--;
         return stack[count];
     }
@@ -64,7 +66,7 @@ public:
     // View the item at the top of the stack
     T Head()
     {
-        assert(count >= 0 || count <= 100);
+        assert(count >= 0 && count <= 4);
         return stack[count - 1];
     }
 
