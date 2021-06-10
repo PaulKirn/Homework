@@ -7,7 +7,7 @@ class Animal
 public:
 	virtual void Voice()
 	{
-		cout << "AnimalVoice\n";
+		cout << "AnimalVoice";
 	}
 };
 
@@ -16,7 +16,7 @@ class Dog : public Animal
 public:
 	void Voice() override
 	{
-		cout << "Woof!\n";
+		cout << "Woof!" << endl;
 	}
 };
 
@@ -25,7 +25,7 @@ class Cat : public Animal
 public:
 	void Voice() override
 	{
-		cout << "Meow!\n";
+		cout << "Meow!" << endl;
 	}
 };
 
@@ -34,7 +34,7 @@ class Bird : public Animal
 public:
 	void Voice() override
 	{
-		cout << "Tweat!\n";
+		cout << "Tweat!" << endl;
 	}
 };
 
@@ -43,7 +43,7 @@ class Fish : public Animal
 public:
 	void Voice() override
 	{
-		cout << "Bulb...\n";
+		cout << "Bulb..." << endl;
 	}
 };
 
@@ -57,4 +57,9 @@ int main()
 
 	for (Animal* a : animals)
 		a->Voice();
+
+	delete animals[0];
+	delete animals[1];
+	delete animals[2];
+	delete animals[3];
 }
