@@ -1,49 +1,86 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
 class Animal
 {
 public:
-	virtual void Voice()
+	virtual ~Animal()
 	{
-		cout << "AnimalVoice";
+		sayGoodbye();
 	}
+	virtual void Voice()
+	{}
+	virtual void sayGoodbye()
+	{}
 };
 
 class Dog : public Animal
 {
 public:
+	virtual ~Dog()
+	{
+		sayGoodbye();
+	}
 	void Voice() override
 	{
 		cout << "Woof!" << endl;
+	}
+	virtual void sayGoodbye()
+	{
+		cout << "'whimping'" << endl;
 	}
 };
 
 class Cat : public Animal
 {
 public:
+	virtual ~Cat()
+	{
+		sayGoodbye();
+	}
 	void Voice() override
 	{
 		cout << "Meow!" << endl;
+	}
+	virtual void sayGoodbye()
+	{
+		cout << "'hissing'" << endl;
 	}
 };
 
 class Bird : public Animal
 {
 public:
+	virtual ~Bird()
+	{
+		sayGoodbye();
+	}
 	void Voice() override
 	{
 		cout << "Tweat!" << endl;
+	}
+	virtual void sayGoodbye()
+	{
+		cout << "'flies away'" << endl;
 	}
 };
 
 class Fish : public Animal
 {
 public:
-	void Voice() override
+	virtual ~Fish()
 	{
-		cout << "Bulb..." << endl;
+		sayGoodbye();
+	}
+	void Voice()  override
+	{
+		cout << "Bulb...\n" << endl;
+	}
+	virtual void sayGoodbye()
+	{
+		cout << "'gurgles'" << endl;
 	}
 };
 
@@ -62,4 +99,6 @@ int main()
 	delete animals[1];
 	delete animals[2];
 	delete animals[3];
+
+
 }
