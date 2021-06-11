@@ -76,7 +76,7 @@ public:
 	}
 	void Voice()  override
 	{
-		cout << "Bulb...\n" << endl;
+		cout << "Bulb..." << endl;
 	}
 	virtual void sayGoodbye()
 	{
@@ -93,12 +93,16 @@ int main()
 	animals[3] = new Fish();
 
 	for (Animal* a : animals)
+	{
 		a->Voice();
+		delete a;
+	}
+		
 
-	delete animals[0];
-	delete animals[1];
-	delete animals[2];
-	delete animals[3];
+	//delete animals[0];
+	//delete animals[1];
+	//delete animals[2];
+	//delete animals[3];
 
 
 }
